@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ruby Chen's Portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  <style type="text/css">
+
+
+  .first-page{
+    padding-top:50%;
+  }
+  .vimeo{
+    padding-top: 15%;
+  }
+  .aboutme{
+    margin-top: 10px;
+  }
+  .about-paragraph{
+
+  }
+span.lead{
+    font-family: 'open_sansbold', sans-serif;
+    font-size: 14pt;
+}
+.proficiency{
+    font-family: 'open_sansregular', sans-serif;
+}
+
+
+  </style>
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){ 
+        $(window).hashchange( function(e){
+          var hash = window.location.hash;    
+          var pageid = location.hash.substring(1);
+          if(!hash)
+            appendPage("present");
+          else
+            appendPage(pageid);
+        });
+        $(window).hashchange();
+      });
+
+      function appendPage(id){
+        var $container = $('#page-container');
+        var $innerpage = $container.find('#' + id);
+        console.log($innerpage);
+        //alert(id);
+        $("#myTab").find("#"+id).addClass("active").siblings(".active").removeClass("active");
+
+        if($innerpage.length == 0){
+        
+          var $page = $('<div class="tab_content"></div>').attr('id', id);
+          
+          $result = $page.load(id + '.html', function(){
+            $result.appendTo($container);
+            $page.trigger('pagecreate', [$page]);
+            $page.siblings('.tab_content').hide();
+            $page.hide().fadeIn(500, function(){
+              $page.trigger('pageshow', [$page]);       
+            });            
+          });
+        }
+        else{
+          $innerpage.siblings('.tab_content').hide();
+          $innerpage.fadeIn(500, function(){
+            $innerpage.trigger('pageshow', [$innerpage]);
+          });
+          
+        }   
+      }
+
+    </script>
+
+
+
+</head>
+
+  <body>
+
+    <div class="background-image-overlay"></div>
+
+      <div id="outer-background-container" data-default-background-img="assets/images/portfolio/0_present/first_0.jpg" style="background-image:url(assets/images/portfolio/0_present/first_0.jpg);"></div>
+
+
+    <!-- end: #outer-background-container -->    
+
+    <!-- Outer Container -->
+    <div id="outer-container">
+
+      <!-- Left Sidebar -->
+      <section id="left-sidebar">
+        
+        <div class="logo">
+          <a href="#intro" class="link-scroll"><img src="assets/images/portfolio/logogo.png" alt="Ruby Chen"></a>
+        </div><!-- .logo -->
+
+        <!-- Menu Icon for smaller viewports -->
+        <div id="mobile-menu-icon" class="visible-xs" onclick="toggle_main_menu();"><span class="glyphicon glyphicon-th"></span></div>
+
+        <ul id="main-menu">
+          <li id="menu-item-present" class="menu-item scroll active"><a href="#present">A Heavy Present</a></li>
+          <li id="menu-item-dance" class="menu-item scroll"><a href="#dance">Shall We Dance</a></li>
+          <li id="menu-item-chip" class="menu-item scroll"><a href="#chip">Chip-quencer</a></li>
+          <li id="menu-item-musicq" class="menu-item scroll"><a href="#musicq">MusicQ</a></li>
+          <li id="menu-item-aiya" class="menu-item scroll"><a href="#aiya">AIYA</a></li>
+      <!--    <li id="menu-item-other" class="menu-item scroll"><a href="#other">other</a></li> -->
+          <li id="menu-item-about" class="menu-item scroll aboutme"><a href="#about">About Me</a></li>
+          <li id="menu-item-proficiency" class="menu-item scroll"><a href="#proficiency">Proficiency</a></li>
+          <li id="menu-item-contact" class="menu-item scroll"><a href="#contact">Contact</a></li>
+          <li id="menu-item-resume" class="menu-item scroll"><a href="assets/files/RubyChen_resume.pdf" target="_blank" >Resume</a></li>
+        </ul><!-- #main-menu -->
+
+      </section><!-- #left-sidebar -->
+      <!-- end: Left Sidebar -->
+
+      <section id="main-content" class="clearfix">
+        
+        <article id="intro" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/0_present/first.jpg">
+          <div class="content-wrapper clearfix" style="position: absolute;">
+            <div class="col-sm-10 col-md-9 pull-right">
+
+                <section class="feature-text">
+                  <h1>Ruby Chen</h1>
+                  <p>Ruby is an interaction designer and artist, exploring the world that art and technology meet. She likes making fun stuffs to create special moments and bring joy to our lives.</p>
+
+                </section>
+
+            </div><!-- .col-sm-10 -->
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// A HEAVY PRESENT //////////////////////////////////////////////////////////////// -->
+        <article id="present" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/0_present/present_0.jpg">
+          <div class="content-wrapper clearfix">
+
+              <div id="present-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">
+                
+                <!-- Indicators - slide navigation -->
+                <ol class="carousel-indicators title-indicators">
+                  <li data-target="#present-carousel" data-slide-to="0" class="active">Intro</li>
+                  <li data-target="#present-carousel" data-slide-to="1" class="">Video</li>
+                  <li data-target="#present-carousel" data-slide-to="2" class="">。</li>
+                  <li data-target="#present-carousel" data-slide-to="3" class="">。</li>
+                  <li data-target="#present-carousel" data-slide-to="4" class="">。</li>
+                  <li data-target="#present-carousel" data-slide-to="5" class="">。</li>
+                  <li data-target="#present-carousel" data-slide-to="6" class="">。</li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                  <div class="item active">
+                    <div class="carousel-text-content">
+                      <div class="first-page">  
+                        <h2 class="title">A Heavy Present</h2>  
+                        <p>A Heavy Present was my solo thesis exhibition in California Institute of the Arts. This was a self identifying process after studied abroad. In addition to cultural differences, the expectations toward a model student from my family and within Taiwanese society reinforced my contradictory situation between self-fulfillment and validation.</p>                
+                      </div>
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <div class="vimeo">
+                        <iframe src="http://player.vimeo.com/video/93001944?portrait=0&amp;color=b4967b" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                      </div>                      
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/0_present/present_1.jpg" class="full-width" alt="A Heavy Present">
+                      <p class="description">To show this story, I had four traditional Taiwanese windows shipped from my hometown, served as an interface between the inside and outside worlds, and also represented my parents watching over the whole room.</p>
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/0_present/present_2.jpg" class="full-width" alt="A Heavy Present">
+                      <p class="description">The main objects in the exhibition were three different rolodex installations with flipping metal frames covered by certificates, which my brother had earned during his childhood. I had the same experience growing up, and our mother would collect them all. The center one was made with a handle, which I encouraged audiences to crank it.</p>
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/0_present/present_3.jpg" class="full-width" alt="A Heavy Present">
+                     <p class="description">The two other rolodex installations were each flipped by a motor. The larger one gradually flipped slower and slower, representing the tiring process of following expectations of my family. The smaller one looked lonely and isolated in the corner, but was like my inner self trying to escape from the situation, letting the certificates fell apart and generating a notable sound.</p>
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/0_present/present_4.jpg" class="full-width" alt="A Heavy Present">
+                      <p class="description">There was also a subtle but continuing sound during the whole exhibition. The Skype calling sound from my mother somehow haunted me after I came to the US, and in the exhibition, it was silently nagging everyone from a distance. I felt like she was a presence in the room that affected everything.</p>
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/0_present/present_5.jpg" class="full-width" alt="A Heavy Present">
+                      <p class="description">In this exhibition, I subverted the education and validation system through a personal expression, such as cranking the certificates. What I expected more after this, was to create the conversation about the needs of being validated, and perhaps in a larger context, our expectation of the institution.<br> Why do one need more validation from others after gotten those certificates from the institution? Should being validated from the institution or anyone become a way to gain confidence, and to define oneself?</p>
+                    </div>
+                  </div><!-- .item -->
+
+                </div><!-- .carousel-inner -->
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#present-carousel" data-slide="prev"></a>
+                <a class="right carousel-control" href="#present-carousel" data-slide="next"></a>
+
+              </div><!-- #about-carousel -->
+
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// SHALL WE DANCE ///////////////////////////////////////////////////////////////// -->
+        <article id="dance" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/1_dance/dance.JPG">
+          <div class="content-wrapper clearfix">
+
+              <div id="dance-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">
+                
+                <!-- Indicators - slide navigation -->
+                <ol class="carousel-indicators title-indicators">
+                  <li data-target="#dance-carousel" data-slide-to="0" class="active">Intro</li>
+                  <li data-target="#dance-carousel" data-slide-to="1" class="">Video</li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                  <div class="item active">
+                    <div class="carousel-text-content">
+                      <div class="first-page">  
+                        <h2 class="title">Shall We Dance</h2>  
+                        <p>Shall We Dance was an interactive projection of a dancer’s shadow, which only continued dancing while audience imitated the dancer’s gesture. Through the process, we found more possibility of interaction and communication through our bodies, just like dancing.</p>                
+                      </div>                      
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <div class="vimeo">
+                        <iframe src="http://player.vimeo.com/video/68727232?portrait=0&amp;color=b4967b" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                      </div>                      
+                    </div>
+                  </div><!-- .item -->
+
+                </div><!-- .carousel-inner -->
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#dance-carousel" data-slide="prev"></a>
+                <a class="right carousel-control" href="#dance-carousel" data-slide="next"></a>
+
+              </div><!-- #about-carousel -->
+
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// CHIP-QUENCER /////////////////////////////////////////////////////////////////// -->
+        <article id="chip" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/2_chipquencer/chip.JPG">
+          <div class="content-wrapper clearfix">
+
+              <div id="chip-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">
+                
+                <!-- Indicators - slide navigation -->
+                <ol class="carousel-indicators title-indicators">
+                  <li data-target="#chip-carousel" data-slide-to="0" class="active">Intro</li>
+                  <li data-target="#chip-carousel" data-slide-to="1" class="">Video</li>
+                  <li data-target="#chip-carousel" data-slide-to="2" class="">。</li>
+                  <li data-target="#chip-carousel" data-slide-to="3" class="">。</li>
+                  <li data-target="#chip-carousel" data-slide-to="4" class="">。</li>
+                  <li data-target="#chip-carousel" data-slide-to="5" class="">。</li>
+                  <li data-target="#chip-carousel" data-slide-to="6" class="">。</li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                  <div class="item active">
+                    <div class="carousel-text-content">
+                      <div class="first-page">  
+                        <h2 class="title">Chip-Quencer</h2>  
+                        <p>Chip-quencer was a light-triggered rhythm sequencer, aiming at engaging audience’s body movement with the pleasure of sound. It was my first installation in CalArts. With a passion building interactive installations with sound, I inspired by rhythm sequencer and made a sequencer that trigger by hiding the light.</p>
+                      </div>                                            
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <div class="vimeo">
+                        <iframe src="http://player.vimeo.com/video/79580356?portrait=0&amp;color=b4967b" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                      </div>                      
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/2_chipquencer/website_chip_2.png" class="full-width" alt="Lorem Ipsum">
+                      <p class="description">There are 4 rows and 4 columns with 16 photocells on every node. Different row represents different pitch. The sound sequence is played from left to right and loop as a rhythm sequencer. People can move the wood chips to different nodes and find the sound change.</p>
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/2_chipquencer/website_chip_3.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/2_chipquencer/website_chip_4.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/2_chipquencer/website_chip_5.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/2_chipquencer/website_chip_0.png" class="full-width" alt="Lorem Ipsum">
+                      <p class="description">The goal I pursuit is making interactive installations that audiences would play with it and discover great fun in it. This work has been shown in the Art and Technology final exhibition, appealed to lots of audiences, who also play with it and enjoy the uncertainty of the sound changes.</p>
+                    </div>
+                  </div><!-- .item -->
+
+                </div><!-- .carousel-inner -->
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#chip-carousel" data-slide="prev"></a>
+                <a class="right carousel-control" href="#chip-carousel" data-slide="next"></a>
+
+              </div><!-- #about-carousel -->
+
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// MUSICQ /////////////////////////////////////////////////////////////////// -->
+        <article id="musicq" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/3_musicq/website_musicq_bg.png">
+          <div class="content-wrapper clearfix">
+
+              <div id="musicq-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">
+                
+                <!-- Indicators - slide navigation -->
+                <ol class="carousel-indicators title-indicators">
+                  <li data-target="#musicq-carousel" data-slide-to="0" class="active">Intro</li>
+                  <li data-target="#musicq-carousel" data-slide-to="1" class="">Video</li>
+                  <li data-target="#musicq-carousel" data-slide-to="2" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="3" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="4" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="5" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="6" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="7" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="8" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="9" class="">。</li>
+                  <li data-target="#musicq-carousel" data-slide-to="10" class="">。</li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                  <div class="item active">
+                    <div class="carousel-text-content">
+                      <div class="first-page">  
+                        <h2 class="title">MusicQ</h2>  
+                        <p>MusicQ is a project for making our life more joyful. By redesigning the cart handle into a music keyboard, we transformed the experience of waiting in lines for cashier from tiresome annoyance into delightful anticipation.</p>
+                      </div>                                            
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <div class="vimeo">
+                        <iframe src="http://player.vimeo.com/video/50801111?portrait=0&amp;color=b4967b" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                      </div>                      
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_1.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_2.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_3.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_4.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_5.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_6.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_7.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_8.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/3_musicq/website_musicq_9.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+
+
+                </div><!-- .carousel-inner -->
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#musicq-carousel" data-slide="prev"></a>
+                <a class="right carousel-control" href="#musicq-carousel" data-slide="next"></a>
+
+              </div><!-- #about-carousel -->
+
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// AIYA /////////////////////////////////////////////////////////////////// -->
+        <article id="aiya" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/4_aiya/aiyabg2.jpg">
+          <div class="content-wrapper clearfix">
+
+              <div id="aiya-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">
+                
+                <!-- Indicators - slide navigation -->
+                <ol class="carousel-indicators title-indicators">
+                  <li data-target="#aiya-carousel" data-slide-to="0" class="active">Intro</li>
+                  <li data-target="#aiya-carousel" data-slide-to="1" class="">Video</li>
+                  <li data-target="#aiya-carousel" data-slide-to="2" class="">。</li>
+                  <li data-target="#aiya-carousel" data-slide-to="3" class="">。</li>
+                  <li data-target="#aiya-carousel" data-slide-to="4" class="">。</li>
+                  <li data-target="#aiya-carousel" data-slide-to="5" class="">。</li>
+                  <li data-target="#aiya-carousel" data-slide-to="6" class="">。</li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                  <div class="item active">
+                    <div class="carousel-text-content">
+                      <div class="first-page">  
+                        <h2 class="title">AIYA</h2>  
+                        <p>AIYA was a drawing tool that records user’s drawing process and voice at the same time, which enables kids and their parents to share and store the process of developing creative storytelling and imagination.</p>
+                      </div>                                            
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <div class="vimeo">
+                        <iframe src="http://player.vimeo.com/video/50801112?portrait=0&amp;color=b4967b" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                      </div>                      
+                    </div>
+                  </div><!-- .item -->
+
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/4_aiya/website_aiya_0.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/4_aiya/website_aiya_1.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/4_aiya/website_aiya_2.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/4_aiya/website_aiya_3.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+                  <div class="item">
+                    <div class="carousel-text-content">
+                      <img src="assets/images/portfolio/4_aiya/website_aiya_4.png" class="full-width" alt="Lorem Ipsum">
+                    </div>
+                  </div><!-- .item -->
+
+                </div><!-- .carousel-inner -->
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#aiya-carousel" data-slide="prev"></a>
+                <a class="right carousel-control" href="#aiya-carousel" data-slide="next"></a>
+
+              </div><!-- #about-carousel -->
+
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// ABOUT ME /////////////////////////////////////////////////////////////////// -->
+        <article id="about" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/me.JPG">
+          <div class="content-wrapper clearfix">
+            <div class="col-sm-11 col-md-11 pull-right">
+
+                <p class="about-paragraph"><span class="lead">Ruby is an interaction designer & artist who make interesting stuffs.</span></p>
+
+                <p class="about-paragraph">Ruby has a background in <a href="http://csie.ntu.edu.tw/" target="_blank">Computer Science</a> at <a href="http://www.ntu.edu.tw/" target="_blank">National Taiwan University</a>, where<br> she was amazed by the variety of possibility to create fun stuffs through <span class="lead">programming</span>.<br> She fall in love with making <span class="lead">tangible interactive design</span> after joined<br> a student-organized workshop on human-computer interaction, <a href="http://www.openhci.com/" target="_blank">OpenHCI</a>.</p>
+
+                <p class="about-paragraph">After two years at <a href="http://calarts.edu/" target="_blank">California Institute of the Arts</a>, Ruby just received her Master of Fine Arts<br> in <a href="http://calartandtech.com/" target="_blank">Art and Technology</a>. During the time in CalArts, Ruby enjoyed developing <span class="lead">critical thinking</span>,<br> and creating <span class="lead">interactive installations</span> with her technical skills and creative mind.</p>
+
+                <p class="about-paragraph">In addition to the rich interaction in website and mobile devices, different<br> sensory approach stands out and interests people more. That's why Ruby loves<br> making tangible interactive design. She is also interested in <span class="lead">environmental<br> interaction design, creative product design and user experience design</span>.</p>
+
+                <p class="about-paragraph">Ruby also loves sketching, singing and traveling. She cares about everything that makes us smile,<br> that moves us and that inspires us, and that's also how she wants to contribute to the world.</p>                
+
+            </div><!-- .col-sm-10 -->
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+ 
+
+        <!-- //////// PROFICIENCY /////////////////////////////////////////////////////////////////// -->
+        <article id="proficiency" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/me1.JPG">
+          <div class="content-wrapper clearfix">
+            <div class="col-sm-9 col-md-9 pull-right">
+
+      
+          <h4 class="section-title">Proficiency</h4>
+          <section class="grid row clearfix clearfix-for-3cols proficiency">
+
+                  <!-- grid item -->
+                  <div class="grid-item col-md-4">
+                    <div class="item-content clearfix">
+                      <div class="text-content">
+                        <h5>Knowledge</h5>
+                        <p>interaction design, <br>
+                            mobile UI design, <br>
+                            user experience design,<br> 
+                            human-centered design,<br> 
+                            prototyping, <br>
+                            sketching, watercolor, <br>
+                            stop motion animation<br>
+                        </p>
+                        <h5>Languages</h5>
+                        <p>Mandarin Chinese,<br>
+                          English</p>
+                      </div>
+                    </div><!-- end: .item-content -->
+                  </div><!-- end: .grid-item -->
+
+                  <!-- grid item -->
+                  <div class="grid-item col-md-4">
+                    <div class="item-content clearfix">
+                      <div class="text-content">
+                        <h5>Programming</h5>
+                        <p>Arduino, Processing,<br>
+                          HTML, CSS,<br>
+                          PHP, javascript,<br>
+                          C, Java,<br>
+                          Actionscript 3.0,<br>
+                          Android, iOS,<br>
+                          Python
+                        </p>
+                      </div>
+                    </div><!-- end: .item-content -->
+                  </div><!-- end: .grid-item -->
+
+                  <!-- grid item -->
+                  <div class="grid-item col-md-4">
+                    <div class="item-content clearfix">
+                      <div class="text-content">
+                        <h5>Software</h5>
+                        <p>Photoshop, Illustrator,<br>
+                          Premiere, After Effect,<br>
+                          Flash,<br>
+                          Quartz Composer,<br>
+                          Resolume Arena,<br>
+                          Unity3D,<br>
+                          Tilemill
+                        </p>
+                      </div>
+                    </div><!-- end: .item-content -->
+                  </div><!-- end: .grid-item -->
+
+                </section><!-- end: grid -->     
+
+            </div><!-- .col-sm-10 -->
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+        <!-- //////// CONTACT /////////////////////////////////////////////////////////////////// -->
+        <article id="contact" class="section-wrapper clearfix" data-custom-background-img="assets/images/portfolio/me2.JPG">
+          <div class="content-wrapper clearfix">
+            <div class="col-sm-10 col-md-9 pull-right">
+                <h4 class="section-title">Contact</h4>
+                <p class="about-paragraph">949.293.4031<br>
+                tingjuchen@alum.calarts.edu</p>
+          <a href="http://www.facebook.com/primes.rubychen" target="_blank" title="Facebook"><img src="assets/images/theme_images/social_icons/facebook.png" alt="Facebook"></a>
+          <a href="http://vimeo.com/tingjuchen" target="_blank" title="Vimeo"><img src="assets/images/theme_images/social_icons/vimeo.png" alt="Vimeo"></a>
+          <a href="http://www.behance.net/tingjuchen" target="_blank" title="Behance"><img src="assets/images/theme_images/social_icons/behance.png" alt="Behance"></a>
+          <a href="http://www.linkedin.com/in/tingjuchen" target="_blank" title="LinkedIn"><img src="assets/images/theme_images/social_icons/linkedin.png" alt="LinkedIn"></a>
+      
+
+
+            </div><!-- .col-sm-10 -->
+          </div><!-- .content-wrapper -->
+        </article><!-- .section-wrapper -->
+
+
+
+        <!-- //////// RESUME /////////////////////////////////////////////////////////////////// -->
+<!--
+        <article id="resume" class="section-wrapper clearfix" data-custom-background-img="assets/images/other_images/bg1.jpg">
+          <div class="content-wrapper clearfix">
+            <div class="col-sm-10 col-md-9 pull-right">
+
+                <h4 class="section-title">Proficiency</h4>
+                <p><a href="assets/files/TingJuChen_resume.pdf" target="_blank" class="btn btn-outline-inverse btn-sm">resume pdf</a></p>
+
+            </div>
+          </div>
+        </article>
+-->
+
+      </section><!-- #main-content -->
+
+
+      <!-- Footer -->
+      <section id="footer">
+
+        <!-- Go to Top -->
+        <div id="go-to-top" onclick="scroll_to_top();"><span class="icon glyphicon glyphicon-chevron-up"></span></div>
+
+        <!-- ==================================================================
+        SOCIAL ICONS
+        ==================================================================  -->
+        <!-- Each social icon item consists of the following:
+             - Link to the social page in href of <a>
+             - social icon in the <img> - a list of social icons options are found in the directory assets/images/theme_images/social_icons/ -->
+        <ul class="social-icons">
+          <li><a href="http://www.facebook.com/primes.rubychen" target="_blank" title="Facebook"><img src="assets/images/theme_images/social_icons/facebook.png" alt="Facebook"></a></li>
+          <li><a href="http://vimeo.com/tingjuchen" target="_blank" title="Vimeo"><img src="assets/images/theme_images/social_icons/vimeo.png" alt="Vimeo"></a></li>
+          <li><a href="http://www.behance.net/tingjuchen" target="_blank" title="Behance"><img src="assets/images/theme_images/social_icons/behance.png" alt="Behance"></a></li>
+          <li><a href="http://www.linkedin.com/in/tingjuchen" target="_blank" title="LinkedIn"><img src="assets/images/theme_images/social_icons/linkedin.png" alt="LinkedIn"></a></li>
+
+        </ul>
+        <!-- ==================== END: Social Icons ==================== -->
+
+        <!-- copyright text -->
+        <div class="footer-text-line">2014 © Ruby Chen</div>
+      </section>
+      <!-- end: Footer -->      
+
+    </div><!-- #outer-container -->
+    <!-- end: Outer Container -->
+
+
+    <!-- Javascripts
+    ================================================== -->
+
+    <!-- Jquery and Bootstrap JS -->
+    <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+    <!-- Easing - for transitions and effects -->
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+
+    <!-- background image strech script -->
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <!-- background image fix for IE 9 or less
+       - use same background as set above to <body> -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      jQuery("#outer-background-container").backstretch("assets/images/other_images/bg5.jpg");
+    });
+    </script> 
+    <![endif]-->  
+
+    <!-- detect mobile browsers -->
+    <script src="assets/js/detectmobilebrowser.js"></script>
+
+    <!-- Custom functions for this theme -->
+    <script src="assets/js/functions.min.js"></script>
+    <script src="assets/js/initialise-functions.js"></script>
+
+    <!-- IE9 form fields placeholder fix -->
+    <!--[if lt IE 9]>
+    <script>contact_form_IE9_placeholder_fix();</script>
+    <![endif]-->  
+
+</body>
+</html>
